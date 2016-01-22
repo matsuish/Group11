@@ -25,6 +25,11 @@ import org.doctester.testbrowser.Response;
 import org.hamcrest.CoreMatchers;
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import models.Deck;
+import models.Card;
+
 
 public class ApiControllerDocTesterTest extends NinjaDocTester {
     
@@ -50,6 +55,13 @@ public class ApiControllerDocTesterTest extends NinjaDocTester {
 
         assertThat(response.payload, containsString("Aces Up"));
         assertThat(response.payload, containsString("columnOfCards"));
+    }
+
+    @Test
+    public void testDeckExist() {
+        Deck deck = new Deck();
+        assertNotNull(deck);
+
     }
 
 }
